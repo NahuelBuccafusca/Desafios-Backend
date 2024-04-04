@@ -1,46 +1,44 @@
 class ProductManager {
     constructor() {
-        this.productos = []
-        this.nextId=1
-
+        this.products = []
     }
     getProducts() {
-        return this.productos
+        return this.products
     }
-    addProduct(producto) {
-        if(!this.productoValido(producto)){
+    addProduct(product) {
+        if(!this.isProductValid(product)){
             console.log("El producto no es valido")
             return
         }
-        if(this.codigoDuplicado(producto.code)){
+        if(this.isCodeDuplicated(product.code)){
             console.log("Código de producto ya utilizado")
             return
         }
-        producto.id=this.nextId++
-        this.productos.push(producto)
+        product.id= this.products.length + 1
+        this.products.push(product)
 
     }
     getProductById(id) {
-        const producto = this.productos.find((p) => p.id === id)
-        if (producto) {
-            return producto
+        const product = this.products.find((p) => p.id === id)
+        if (product) {
+            return product
         } else{
             console.log("Producto no encontrado")
         }
 
     }
-    productoValido(producto){
+    isProductValid(product){
         return(
-            producto.title &&
-            producto.description &&
-            producto.price &&
-            producto.thumbnail &&
-            producto.code &&
-            producto.stock !== undefined
+            product.title &&
+            product.description &&
+            product.price &&
+            product.thumbnail &&
+            product.code &&
+            product.stock !== undefined
         )
     }
-    codigoDuplicado(code){
-      return this.productos.some((p)=> p.code === code)  
+    isCodeDuplicated(code){
+      return this.products.some((p)=> p.code === code)  
     }
 }
 
@@ -83,11 +81,11 @@ productManager.addProduct({
     stock:20
 })
 
-const productos= productManager.getProducts()
-console.log(productos)
+const products= productManager.getProducts()
+console.log(products)
 
-const producto= productManager.getProductById(2)
-console.log(producto)
+const product= productManager.getProductById(2)
+console.log(product)
 
 // error2
 productManager.addProduct({

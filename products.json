@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Queso",
+    "description": "queso la paulina",
+    "price": 10,
+    "thumbnail": "img/queso.jpg",
+    "code": "A003",
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "title": "Leche",
+    "description": "Leche la serenisima",
+    "price": 30,
+    "thumbnail": "img/leche.jpg",
+    "code": "A007",
+    "stock": 12
+  },
+  {
+    "id": 4,
+    "title": "Off",
+    "description": "Off repelente",
+    "price": 70,
+    "thumbnail": "img/off.jpg",
+    "code": "A005",
+    "stock": 20
+  }
+]
