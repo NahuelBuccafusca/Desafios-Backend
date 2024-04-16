@@ -1,10 +1,10 @@
 {
-  "name": "backend",
+  "name": "desafio3",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "servidor_express.js",
   "scripts": {
-    "start": "node --watch /desafio1/app.js"
+    "start": "node --watch desafio3/servidor_express.js"
   },
   "keywords": [],
   "author": "",

@@ -6,7 +6,16 @@
     "price": 10,
     "thumbnail": "img/queso.jpg",
     "code": "A003",
-    "stock": 50
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "title": "cafe",
+    "description": "cafe cabrales",
+    "price": 20,
+    "thumbnail": "img/cafe.jpg",
+    "code": "A001",
+    "stock": 20
   },
   {
     "id": 3,

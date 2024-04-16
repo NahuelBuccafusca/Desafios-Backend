@@ -86,15 +86,16 @@ class ProductManager {
     }
 }
 
-const action = new ProductManager();
-action.addProduct("Queso", "queso la paulina", 10, "img/queso.jpg", "A003", 15);
-action.addProduct("cafe", "cafe cabrales", 20, "img/cafe.jpg", "A001", 20);
-action.addProduct("Leche", "Leche la serenisima", 30, "img/leche.jpg", "A007", 12);
-action.addProduct("Off", "Off repelente", 70, "img/off.jpg", "A005", 20);
-console.log(action.getProducts());
+const productManager = new ProductManager();
+productManager.addProduct("Queso", "queso la paulina", 10, "img/queso.jpg", "A003", 15);
+productManager.addProduct("cafe", "cafe cabrales", 20, "img/cafe.jpg", "A001", 20);
+productManager.addProduct("Leche", "Leche la serenisima", 30, "img/leche.jpg", "A007", 12);
+productManager.addProduct("Off", "Off repelente", 70, "img/off.jpg", "A005", 20);
 
-action.updateProduct(1, { stock: 50 });
-console.log(action.getProducts());
 
-action.deleteProduct(2);
-console.log(action.getProducts());
+productManager.updateProduct(1, { stock: 50 });
+// console.log(productManager.getProducts());
+
+productManager.deleteProduct(2);
+// console.log(productManager.getProducts());
+module.exports= ProductManager
