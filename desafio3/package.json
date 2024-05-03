@@ -1,0 +1,15 @@
+{
+  "name": "desafio3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servidor_express.js",
+  "scripts": {
+    "start": "node --watch desafio3/servidor_express.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

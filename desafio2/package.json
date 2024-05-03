@@ -1,0 +1,12 @@
+{
+  "name": "desafio2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "productManager.js",
+  "scripts": {
+    "start": "node --watch productManager.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

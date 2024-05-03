@@ -1,5 +1,5 @@
 const express = require('express')
-const ProductManager = require('../desafio2/productManager.js')
+const ProductManager = require('../../desafio4/src/manager/productManager')
 
 
 
@@ -11,10 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 const manager = new ProductManager
-manager.addProduct("Queso", "queso la paulina", 10, "img/queso.jpg", "A003", 15);
-manager.addProduct("cafe", "cafe cabrales", 20, "img/cafe.jpg", "A001", 20);
-manager.addProduct("Leche", "Leche la serenisima", 30, "img/leche.jpg", "A007", 12);
-manager.addProduct("Off", "Off repelente", 70, "img/off.jpg", "A005", 20);
+
 
 app.get('/products',async(req, res) => {
 
