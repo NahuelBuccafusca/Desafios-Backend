@@ -21,10 +21,7 @@ app.use(express.static(__dirname + '/public'));
 socketServer.on('connection', socket => {
     console.log('nuevo cliente conectado')
 
-    productManager.getProducts()
-        .then((products) => {
-            socket.emit('products', products);
-        })
+   
     socket.on('addProduct', product => {
         productManager.addProduct(product.code, product.title, product.description, product.price, [], product.stock)
             .then(() => {
