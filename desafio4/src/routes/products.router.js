@@ -13,7 +13,7 @@ router.set("view engine", "handlebars");
 router.get('/realTimeProducts', async (req, res) => {
     try {
         const products = await productManager.getProducts();
-        res.render('home', {products, length : products.length > 0 ? true : false});
+        res.render('home', {products});
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener los productos' });   
     }

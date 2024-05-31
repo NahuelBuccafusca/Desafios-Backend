@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <form action="/api/products/update/{{productById._id}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{productById.title}}">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Descripción" value="{{productById.description}}">
+        </div>
+        <div class="mb-3">
+            <label for="code" class="form-label">Código</label>
+            <input type="text" class="form-control" id="code" name="code" placeholder="Código" value="{{productById.code}}">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="price" name="price" placeholder="Precio" value="{{productById.price}}">
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" value="{{productById.stock}}">
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoría</label>
+            <input type="text" class="form-control" id="category" name="category" placeholder="Categoría" value="{{productById.category}}">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
