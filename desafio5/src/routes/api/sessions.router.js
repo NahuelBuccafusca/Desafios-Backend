@@ -23,7 +23,7 @@ router.post('/login',async (req,res)=>{
         console.log(user)
         if(!user) return res.status(404).send('Usuario no encontrado');
         req.session.user={
-            id: user.__id,
+            id: user._id,
             userName: user.userName,
             userLastname: user.userLastname,
             email: user.email,

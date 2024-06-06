@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h2>Complete todos los campos para agregar el producto</h2>
+    <form id="addProductForm" action="/api/addProduct" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{productById.title}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Descripción" value="{{productById.description}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="code" class="form-label">Código</label>
+            <input type="text" class="form-control" id="code" name="code" placeholder="Código" value="{{productById.code}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="price" name="price" placeholder="Precio" value="{{productById.price}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" value="{{productById.stock}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoría</label>
+            <input type="text" class="form-control" id="category" name="category" placeholder="Categoría" value="{{productById.category}}" required>
+        </div>
+        <div class="container text-center">
+        <button type="submit" class="btn btn-success">
+            Agregar Producto
+        </button>
+        <a href="/api/products" class="btn btn-danger">
+            Volver a Productos
+        </a>
+        </div>
+    </form>
+</div>
+

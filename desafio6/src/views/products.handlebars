@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                Bienvenido/a {{userName}} {{userLastname}}
+            </div>
+            <div class="col">
+                <h1>Lista de productos</h1>
+            </div>
+            <div class="col">
+                <a href="/api/addProduct" class="btn btn-info" target="_blank">
+                    Agregar un producto...
+                </a>
+            </div>
+        </div>
+    </div>
+    {{#if products}}
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Codigo</th>
+                    <th>Stock</th>
+                    <th>Categoria</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>${{price}}</td>
+                        <td>{{code}}</td>
+                        <td>{{stock}}</td>
+                        <td>{{category}}</td>
+                        <td>{{description}}</td>
+                        <td>
+                            <a href="/api/products/update/{{_id}}" class="btn btn-info">✏</a>
+                        </td>
+                        <td>
+                            <a href="/api/products/delete/{{_id}}" class="btn btn-info">❌</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p>No hay productos disponibles</p>
+    {{/if}}
+</div>

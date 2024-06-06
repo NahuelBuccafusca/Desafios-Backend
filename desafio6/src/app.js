@@ -14,6 +14,8 @@ import cookieParser from 'cookie-parser';
 import FileStore from 'session-file-store';
 import viewsRouter from'./routes/views.js'
 import sessionsRouter from './routes/api/sessions.router.js'
+import passport from 'passport';
+import initializePassport from './config/passport.config.js';
 
 const app = express()
 const PORT = 8080
@@ -30,7 +32,7 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
 .catch(error => console.error("Error en la conexión", error))
 
 app.use(session({
-    // store: new FileStoreInstance({path:'./session', ttl:100, retries:0}),
+    store: new FileStoreInstance({path:'./session', ttl:100, retries:0}),
     secret:'secretkey',
     resave:false,
     saveUnitialized:true,
@@ -38,8 +40,9 @@ app.use(session({
         ttl:100
     }),
 }))
-
-
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 
@@ -51,7 +54,9 @@ app.set('view engine', 'handlebars')
 app.use('/api/sessions', sessionsRouter)
 app.use('/', viewsRouter)
 
-
+// mongoose.connect(process.env.MONGO_URL).then(() => {
+//         console.log("Conectado a la base de datos")})
+//     .catch(error => console.error("Error en la conexión", error))
 // app.use('/', indexRouter)
 // app.use('/', userRouter)
 // app.use('/', messageRouter)
