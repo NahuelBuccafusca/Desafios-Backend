@@ -1,0 +1,82 @@
+<div>
+  <section>
+    <h2>PRODUCTOS</h2>
+
+    <div >
+      {{#if user}}
+        <p>¡Hola,
+          {{user.first_name}}
+          {{user.last_name}}!</p>
+
+      {{else}}
+        <p>Inicia sesión para inicar la compra</p>
+      {{/if}}
+      {{#if user}}
+
+        <a
+          href="/carts/{{user.cart}}"
+          id="imgCart"
+        >
+          {{#if cart.length}}
+            <p>{{cart.length}}</p>
+          {{else}}
+            <p></p>
+          {{/if}}
+          shopping_cart
+        </a>
+      {{else}}
+
+      {{/if}}
+    </div>
+  
+      {{#if response.payload.length}}
+
+        <div>
+          {{#each response.payload}}
+            <div >
+              <h3>{{this.title}}</h3>
+              <p>$ {{this.price}}</p>
+              <div>
+{{#if ../response/userOne}}
+                <form
+                  action="/carts/{{../response/userOne.cart}}/products/{{this._id}}"
+                  method="POST"
+                ><button  data-id="{{this._id}}">Agregar
+                  </button></form>
+
+                <a class="viewDetails" href="/productDetails/{{this._id}}">Ver
+                  más...</a></div>
+                  {{else}}
+                  <a href="/productDetails/{{this._id}}">Ver
+                  más...</a></div>
+                  {{/if}}
+            </div>
+          {{/each}}
+        </div>
+        <div>
+          {{#if response.hasPrevPage}}
+            <a href="{{response.prevLink}}">Anterior</a>
+          {{/if}}
+          &nbsp;
+          {{response.page}}
+          &nbsp;
+          {{#if response.hasNextPage}}
+            <a href="{{response.nextLink}}">Siguiente</a>
+          {{/if}}
+        </div>
+      {{else}}
+        <p>No products found.</p>
+      {{/if}}
+    
+    {{#if user}}
+      <form action="/api/sessions/logout" method="POST">
+        <button type="submit">Cerrar Sesión</button>
+      </form>
+    {{else}}
+      <a  href="/login">Inicia sesión</a>
+    {{/if}}
+  </section>
+
+</div>
+
+<script src="/js/products.js"></script>
